@@ -1,0 +1,40 @@
+<div class="text-center">
+    <label class="text-center" style="color:darkred">SIMULACION SERVICE DESK </label>
+    <br>
+    <label style="color:darkred">BANDEJA GINA CUMBICUS</label>
+    <p-table class="table table-striped" [value]="listGC" [paginator]="true" paginatorPosition="top" [rows]="13"
+    [totalRecords]=" listGC && listGC !== null ? listGC.length : 0" [scrollable]="true">
+        <ng-template pTemplate="header">
+            <tr  class="text-center">
+                <th style="width: 4%">Codigo Incidencia</th>
+                <th style="width: 7%">Nombre Usuario</th>
+                <th style="width: 5%">Agencia</th>
+                <th style="width: 10%">Descripcion Incidencia</th>
+                <th style="width: 5%">Tipo</th>
+                <th style="width: 4%">SLA</th>
+                <th style="width: 4%">Prioridad</th>
+                <th style="width: 7%">Técnico a Cargo</th>
+                <th style="width: 6%">Fecha Registro</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-incidencia>
+            <tr class="text-center">
+                <td style="width: 4%">{{incidencia.codigoincidencia}}</td>
+                <td style="width: 7%">{{incidencia.nombreusuario}}</td>
+                <td style="width: 5%">{{incidencia.agencia}}</td>
+                <td style="width: 10%">{{incidencia.descripcionincidencia}}</td>
+                <td style="width: 5%">{{incidencia.tipoincidencia}}</td>
+                <td style="width: 4%">{{incidencia.sla}}</td>
+                <td style="width: 4%">{{incidencia.prioridad}}</td>
+                <td style="width: 7%">{{incidencia.tecnicoasignado}}</td>
+                <td style="width: 6%" >{{incidencia.fecharegistro}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="paginatorright" let-state>
+            <div style="color: #f22613;">
+              Total Reg. {{listGC && listGC !== null ? listGC.length : 0}}
+            </div>
+          </ng-template>
+    </p-table>
+</div>
+
